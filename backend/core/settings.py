@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "authentication",
+    "geolocalizacion",
 ]
 
 MIDDLEWARE = [
@@ -94,4 +95,5 @@ SIMPLE_JWT = {
 # CORS — permite llamadas desde React
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "http://localhost:5174",
 ]

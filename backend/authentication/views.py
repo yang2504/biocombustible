@@ -17,7 +17,7 @@ class LoginView(APIView):
                 status=status.HTTP_400_BAD_REQUEST
             )
 
-        # Inyección de dependencias
+        
         repo = MySQLUserRepository()
         use_case = LoginUserUseCase(repo)
         
@@ -29,7 +29,7 @@ class LoginView(APIView):
                 status=status.HTTP_401_UNAUTHORIZED
             )
 
-        # Generar token JWT
+        
         token = RefreshToken()
         token["user_id"] = user.id
         token["email"] = user.correo_electronico
