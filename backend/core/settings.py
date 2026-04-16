@@ -20,6 +20,9 @@ INSTALLED_APPS = [
     "corsheaders",
     "authentication",
     "geolocalizacion",
+    "recoleccion",
+    "aceiterecolectado",
+    "pretratamiento",
 ]
 
 MIDDLEWARE = [
