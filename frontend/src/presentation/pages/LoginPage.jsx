@@ -35,7 +35,12 @@ const LoginPage = () => {
 
     const result = await login(email, password);
     if (result.success) {
-      navigate('/dashboard');
+      // rol = 1 es Administrador, rol = 2 (u otros) es Cliente
+      if (result.rol === 1) {
+        navigate('/dashboard');
+      } else {
+        navigate('/canje'); // Vista principal del cliente
+      }
     }
   };
 

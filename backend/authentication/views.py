@@ -36,7 +36,8 @@ class LoginView(APIView):
 
         return Response({
             "access_token": str(token.access_token),
-            "token_type": "bearer"
+            "token_type": "bearer",
+            "rol": user.rol
         })
 
 class UserListView(APIView):

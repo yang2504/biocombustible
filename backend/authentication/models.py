@@ -18,4 +18,12 @@ class UsuarioModel(models.Model):
     rol = models.IntegerField(null=True, blank=True)
 
     class Meta:
-        db_table = "usuario"   # nombre real de la tabla en MySQL
+        db_table = "usuario"
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_active(self):
+        return True

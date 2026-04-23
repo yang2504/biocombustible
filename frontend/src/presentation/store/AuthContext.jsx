@@ -75,7 +75,13 @@ export function AuthProvider({ children }) {
     try {
       const data = await LoginUseCase.execute(correoElectronico, password);
       dispatch({ type: 'LOGIN_SUCCESS', payload: { token: data.access_token } });
-      return { success: true };
+      
+      // Guardar el rol en localStorage para mantenerlo si el usuario recarga
+      if (data.rol !== undefined) {
+        localStorage.setItem('user_role', data.rol);
+      }
+      
+      return { success: true, rol: data.rol };
     } catch (err) {
       const message =
         err.response?.data?.error ||
